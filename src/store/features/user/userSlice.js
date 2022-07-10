@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getLorem = createAsyncThunk(
-  "lorem/getData",
+export const getUsers = createAsyncThunk(
+  "users/getData",
   async (arg, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
@@ -16,7 +16,7 @@ export const getLorem = createAsyncThunk(
 );
 
 const loremSlice = createSlice({
-  name: "lorem",
+  name: "user",
   initialState: {
     data: [],
     isSuccess: false,
@@ -25,15 +25,15 @@ const loremSlice = createSlice({
   },
   reducers: {},
   extraReducers: {
-    [getLorem.pending]: (state, { payload }) => {
+    [getUsers.pending]: (state, { payload }) => {
       state.loading = true;
     },
-    [getLorem.fulfilled]: (state, { payload }) => {
+    [getUsers.fulfilled]: (state, { payload }) => {
       state.loading = false;
       state.data = payload;
       state.isSuccess = true;
     },
-    [getLorem.rejected]: (state, { payload }) => {
+    [getUsers.rejected]: (state, { payload }) => {
       state.message = payload;
       state.loading = false;
       state.isSuccess = false;

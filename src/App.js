@@ -2,15 +2,14 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getLorem } from "./store/features/lorem/loremSlice";
+import { getUsers } from "./store/features/user/userSlice";
 
 function App() {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.lorem.data);
-  console.log("Users:", users);
 
   useEffect(() => {
-    dispatch(getLorem());
+    dispatch(getUsers());
   }, []);
 
   return (

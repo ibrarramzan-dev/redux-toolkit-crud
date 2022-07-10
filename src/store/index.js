@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import loremSlice from "./features/lorem/loremSlice";
+import userSlice from "./features/user/userSlice";
 
 const store = configureStore({
   reducer: {
-    lorem: loremSlice.reducer,
+    lorem: userSlice.reducer,
   },
 });
 
