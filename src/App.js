@@ -6,7 +6,7 @@ import { getUsers } from "./store/features/user/userSlice";
 
 function App() {
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.lorem.data);
+  const users = useSelector((state) => state.user.data);
 
   useEffect(() => {
     dispatch(getUsers());

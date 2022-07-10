@@ -15,7 +15,7 @@ export const getUsers = createAsyncThunk(
   }
 );
 
-const loremSlice = createSlice({
+const userSlice = createSlice({
   name: "user",
   initialState: {
     data: [],
@@ -41,4 +41,4 @@ const loremSlice = createSlice({
   },
 });
 
-export default loremSlice;
+export default userSlice;
